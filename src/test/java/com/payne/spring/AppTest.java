@@ -1,38 +1,27 @@
 package com.payne.spring;
 
-import junit.framework.Test;
-import junit.framework.TestCase;
-import junit.framework.TestSuite;
+import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+import org.springframework.test.context.ContextConfiguration;
+import org.springframework.test.context.junit4.SpringRunner;
 
-/**
- * Unit test for simple App.
- */
-public class AppTest 
-    extends TestCase
-{
-    /**
-     * Create the test case
-     *
-     * @param testName name of the test case
-     */
-    public AppTest( String testName )
-    {
-        super( testName );
-    }
+import com.payne.bean.Persion;
 
-    /**
-     * @return the suite of tests being tested
-     */
-    public static Test suite()
-    {
-        return new TestSuite( AppTest.class );
-    }
+@ContextConfiguration("classpath:application.xml")
+@RunWith(SpringRunner.class)
 
-    /**
-     * Rigourous Test :-)
-     */
-    public void testApp()
-    {
-        assertTrue( true );
-    }
+public class AppTest{
+
+	@Autowired
+	private Persion persion;
+	@Test
+	public void testContent() {
+//		ApplicationContext applicationContext = new ClassPathXmlApplicationContext("application.xml");
+//		persion = (Persion)applicationContext.getBean("persion");
+		System.out.println(persion);
+		
+	}
 }
