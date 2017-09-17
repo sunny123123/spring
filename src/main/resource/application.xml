@@ -18,5 +18,6 @@
 		<property name="name" value="payne"/>
 		<property name="phoneNum" value="18145860503"/>
 	</bean>
+	<context:annotation-config/>
 	
 </beans>
